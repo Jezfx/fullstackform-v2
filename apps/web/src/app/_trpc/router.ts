@@ -4,11 +4,37 @@ import {
   addToDatabase,
 } from "@repo/data-access/supabase";
 import { contactFormSchema } from "./schemas";
+import { z } from "zod";
 
 const t = initTRPC.create();
 
 export const appRouter = t.router({
-  contactSubmit: t.procedure
+  getMessagesByEmail: t.procedure
+    .input(z.object({ email: z.string() }))
+    .query(async ({ input }) => {
+      const supabase = createSupabaseClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+      );
+
+      const { data, error } = await supabase
+        .from("messages")
+        .select("*")
+        .eq("email", input.email);
+
+      return { id: input.email, data };
+    }),
+  getMessages: t.procedure.query(async () => {
+    const supabase = createSupabaseClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    );
+
+    const { data, error } = await supabase.from("messages").select();
+
+    return { data, error };
+  }),
+  submitMessage: t.procedure
     .input(contactFormSchema)
     .mutation(async ({ input }) => {
       try {

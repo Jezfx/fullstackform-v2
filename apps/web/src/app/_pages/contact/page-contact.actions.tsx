@@ -17,7 +17,7 @@ export const pageContactAction = async (
   const unvalidatedData = extractFormData(formData, fields);
 
   try {
-    const result = await serverClient.contactSubmit(
+    const result = await serverClient.submitMessage(
       unvalidatedData as TContactData
     );
 
