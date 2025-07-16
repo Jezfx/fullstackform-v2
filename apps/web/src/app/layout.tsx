@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Provider } from "@repo/ui/provider";
+import { TRPCProvider } from "./_trpc/provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <Provider>{children}</Provider>
+        <TRPCProvider>
+          <Provider>{children}</Provider>
+        </TRPCProvider>
       </body>
     </html>
   );

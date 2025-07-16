@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const contactSchema = z.object({
+export const contactFormSchema = z.object({
   firstName: z
     .string({ message: "First name is required" })
     .min(1, "First name is required")
@@ -27,4 +27,4 @@ export const contactSchema = z.object({
     }),
 });
 
-export type TContactData = z.infer<typeof contactSchema>;
+export type TContactData = z.infer<typeof contactFormSchema>;

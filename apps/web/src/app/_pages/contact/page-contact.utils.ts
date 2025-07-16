@@ -5,8 +5,10 @@ import { ZodError } from "zod";
  * @param error - The ZodError object to flatten.
  * @returns A record of field names and error messages.
  */
-export const flattenZodErrors = (error: ZodError): Record<string, string> =>
-  error.issues.reduce(
+export const flattenZodErrors = (
+  error: ZodError["issues"]
+): Record<string, string> =>
+  error.reduce(
     (acc: { [key: string]: string }, issue) => {
       if (issue.path[0]) {
         acc[issue.path[0]] = issue.message;
