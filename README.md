@@ -11,7 +11,8 @@ serverClient.submitMessage();
 serverClient.getMessagesByEmail({ email });
 ```
 
-## REST GET Endpoint
+## API Routes
+`/api/messages/`
 `/api/messages/by-email?email=jez@jezfx.com`
 
 ##### New 
