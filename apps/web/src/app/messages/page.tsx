@@ -1,4 +1,4 @@
-export const revalidate = 60;
+export const revalidate = 10;
 import { serverClient } from "../_trpc/server-client";
 
 export default async function Messages() {
