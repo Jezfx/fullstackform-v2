@@ -15,7 +15,8 @@ serverClient.getMessagesByEmail({ email });
 `/api/messages/by-email?email=jez@jezfx.com`
 
 ##### New 
-<img width="1083" height="538" alt="Screenshot 2025-07-16 at 17 23 32" src="https://github.com/user-attachments/assets/7b720c71-1599-492f-ab99-71c002a76ee4" />
+<img width="990" height="627" alt="Screenshot 2025-07-16 at 22 15 57" src="https://github.com/user-attachments/assets/c931a2a5-bbd6-4000-adb6-8f54d659cda3" />
+
 
 
 
