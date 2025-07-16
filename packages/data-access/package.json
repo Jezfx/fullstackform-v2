@@ -1,0 +1,18 @@
+{
+  "name": "@repo/data-access",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "exports": {
+    "./supabase": {
+      "default": "./src/supabase.ts"
+    }
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@supabase/supabase-js": "^2.47.1",
+    "typescript": "latest"
+  }
+}
