@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { TContactData } from "./page-contact.schemas";
+import { TContactData } from "../../_trpc/schemas";
 
 export interface TPageContactFormState {
   errors?: Record<string, string>;
