@@ -5,6 +5,27 @@
 
 ## tRCP AppRouter 
 
+```
+.
+└── monorepo (turborepo)/
+    ├── apps/
+    │   ├── docs (storybook)
+    │   ├── astro (astro)
+    │   └── web (nextjs)/
+    │       ├── contact
+    │       ├── messages
+    │       └── api/
+    │           ├── /messages/
+    │           │   └── /get-by-email
+    │           └── /trcp/
+    │               ├── getMessages
+    │               ├── submitMessage
+    │               └── getMessagesByEmail
+    └── packages/
+        ├── ui (chakra-ui)
+        └── data-access (supabase)
+```
+
 ##### New 
 <img width="990" height="627" alt="Screenshot 2025-07-16 at 22 15 57" src="https://github.com/user-attachments/assets/c931a2a5-bbd6-4000-adb6-8f54d659cda3" />
 
