@@ -1,7 +1,18 @@
-# Fullstack Form V2
+# End-to-end typesafe API in a monorepo 
+This is a boilerplate project for future reference. 
+It supports a serverless api route with full end-to-end typescript api. 
+This architecture could support middleware, auth and could scale across multiple apps. 
 
-##### Previous 
-<img width="825" height="489" alt="Screenshot 2025-07-08 at 06 05 14" src="https://github.com/user-attachments/assets/36b46b44-af89-4be2-921e-6d81828a5f69" />
+#### Tech Stack
+
+- [Turborepo](https://turbo.build/)
+- [Next.js](https://nextjs.org/)
+- [tRCP](https://trpc.io/)
+- [Astro](https://astro.build/)
+- [Chakra UI](https://chakra-ui.com/)
+- [Storybook](https://storybook.js.org/)
+- [Zod](https://zod.dev/)
+- [Supabase](https://supabase.com/)
 
 ## tRCP AppRouter 
 
@@ -37,26 +48,37 @@ serverClient.submitMessage();
 serverClient.getMessagesByEmail({ email });
 ```
 
-### NextJS 
+## To Run Locally
 
-###### Web
-- https://fullstackform-v2-web.vercel.app/contact
-- https://fullstackform-v2-web.vercel.app/messages
+### Database
 
-###### tRCP App Router Endpoints
-- https://fullstackform-v2-web.vercel.app/api/trpc/getMessages
-- https://fullstackform-v2-web.vercel.app/api/trpc/submitMessage
-- https://fullstackform-v2-web.vercel.app/api/trpc/getMessagesByEmail
+1. Create table
 
-###### API Router Endpoints
-- https://fullstackform-v2-web.vercel.app/api/messages
-- https://fullstackform-v2-web.vercel.app/api/messages/by-email?email=jez@jezfx.com
+```
+CREATE TABLE public.messages (
+  id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  email text,
+  firstName text,
+  lastName text,
+  message text,
+  CONSTRAINT messages_pkey PRIMARY KEY (id)
+);
+```
 
+2. Add .env.local vars
 
+```
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+```
 
+### Turborepo
 
-#### Astro 
-https://fullstackform-v2-astro-xvk1quwco-jezs-projects-26358988.vercel.app/
+Run turbo
 
-
+```
+pnpm i
+pnpm run dev
+```
 
